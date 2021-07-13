@@ -89,6 +89,8 @@ def wgtConst(sets,n = 2**11,convex=True):
     setsUpper = set()
     
     for i in range(0,n+1):
+        #go through all the number of weights, works best when n is a power of 2
+        #because of memory
         wgt = np.array([i/n,(n-i)/n])
         lowObj = np.full(len(wgt),np.inf)
         lowSetObj = np.full(len(wgt),-1.0)
